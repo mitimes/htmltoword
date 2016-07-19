@@ -33,7 +33,7 @@
             <xsl:when test="contains($lstyle, 'upper-roman') or contains($class, 'romanupper')">upperRoman</xsl:when>
             <xsl:when test="contains($lstyle, 'none') or contains($class, 'manuell')">none</xsl:when>
             <xsl:when test="contains($lstyle, 'decimal') or contains($class, 'num') or contains($class, 'token')">decimal</xsl:when>
-            <xsl:when test="contains($lstyle, 'disc')">bullet,●</xsl:when>
+            <xsl:when test="contains($lstyle, 'disc')">bullet,&#9655;</xsl:when>
             <xsl:when test="contains($lstyle, 'circle')">bullet,o</xsl:when>
             <xsl:when test="contains($lstyle, 'square')">bullet,■</xsl:when>
             <xsl:otherwise>none</xsl:otherwise>
@@ -42,7 +42,7 @@
         <xsl:otherwise>
           <xsl:choose>
             <xsl:when test="$tag_name = 'ol'">decimal</xsl:when>
-            <xsl:otherwise>bullet,●</xsl:otherwise>
+            <xsl:otherwise>bullet,&#9655;</xsl:otherwise>
           </xsl:choose>
         </xsl:otherwise>
       </xsl:choose>
