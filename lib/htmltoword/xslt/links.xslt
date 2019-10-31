@@ -17,18 +17,17 @@
                 exclude-result-prefixes="java msxsl ext w o v WX aml w10"
                 extension-element-prefixes="func">
 
+
   <xsl:template match="a[starts-with(@href, 'http://') or starts-with(@href, 'https://')]" name="link">
     <w:hyperlink>
-      <xsl:attribute name="r:id">rId<xsl:value-of select="count(preceding::a[starts-with(@href, 'http://') or starts-with(@href, 'https://')]) + 8" /></xsl:attribute>
+      <xsl:attribute name="r:id"><xsl:call-template name="relationship-id"/></xsl:attribute>
       <w:r>
         <w:rPr>
           <w:rStyle w:val="Hyperlink"/>
           <w:color w:val="000080"/>
           <w:u w:val="single"/>
         </w:rPr>
-        <w:t xml:space="preserve">
-          <xsl:value-of select="."/>
-        </w:t>
+        <w:t xml:space="preserve"><xsl:value-of select="."/></w:t>
       </w:r>
     </w:hyperlink>
   </xsl:template>
